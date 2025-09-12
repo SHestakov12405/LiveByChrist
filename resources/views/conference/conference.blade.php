@@ -1333,7 +1333,7 @@
 
         window.addEventListener('scroll', checkVisibility);
         window.addEventListener('load', checkVisibility);
-        </script>
+    </script>
     @if ($errors->any())
         <script>
             document.addEventListener("DOMContentLoaded", function() {

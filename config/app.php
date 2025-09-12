@@ -123,4 +123,7 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'page_key' => env('PAGE_KEY'),
+    'export_key' => env('EXPORT_KEY')
+
 ];

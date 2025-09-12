@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class CheckPageAccessKey
+class CheckExportAccessKey
 {
 
     public function handle(Request $request, Closure $next)
@@ -14,7 +14,7 @@ class CheckPageAccessKey
         $providedKey = $request->get('key');
 
         // Проверяем наличие и совпадение ключа
-        if ($providedKey !== config('app.page_key')) {
+        if ($providedKey !== config('app.export_key')) {
             // Можно вернуть 403 или редирект
             abort(403, 'Доступ запрещён');
         }
