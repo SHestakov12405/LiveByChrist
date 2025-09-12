@@ -359,6 +359,10 @@
             </h1>
             <p class="w-5/6 text-lg font-light tracking-wider lg:text-2xl transition-opacity duration-[3s] opacity-0"
             x-effect="$el.classList.toggle('opacity-100')">
+                ВЫСЛУШАЕМ СУЩНОСТЬ ВСЕГО...(ЕКЛ 12:13)
+            </p>
+            <p class="w-5/6 mt-10 text-sm font-light tracking-wider lg:text-xl transition-opacity duration-[3s] opacity-0"
+            x-effect="$el.classList.toggle('opacity-100')">
                 31 ОКТЯБРЯ - 2 НОЯБРЯ
             </p>
         </div>
