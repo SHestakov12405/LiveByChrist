@@ -357,9 +357,9 @@
                 >
                 Живи Христом 2025
             </h1>
-            <p class="w-5/6 text-lg font-light tracking-wider lg:text-2xl transition-opacity duration-[3s] opacity-0"
+            <p class="w-5/6 text-lg font-light tracking-wider lg:text-2xl transition-opacity duration-[3s] opacity-0 whitespace-nowrap"
             x-effect="$el.classList.toggle('opacity-100')">
-                ВЫСЛУШАЕМ СУЩНОСТЬ ВСЕГО...(ЕКЛ 12:13)
+                "ВЫСЛУШАЕМ СУЩНОСТЬ ВСЕГО"
             </p>
             <p class="w-5/6 mt-10 text-sm font-light tracking-wider lg:text-xl transition-opacity duration-[3s] opacity-0"
             x-effect="$el.classList.toggle('opacity-100')">
@@ -407,36 +407,36 @@
 
      {{-- Speakers Section  --}}
     <section class="px-4 py-16 text-gray-50">
-    <div class="max-w-6xl mx-auto">
-        <h2 class="mb-12 text-4xl font-bold text-center">
-        Спикеры конференции
-        </h2>
+        <div class="max-w-6xl mx-auto">
+            <h2 class="mb-12 text-4xl font-bold text-center">
+            Спикеры конференции
+            </h2>
 
-        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-1">
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-1">
 
-        <div class="flex flex-col items-center text-center transition-opacity duration-700 opacity-0 speaker">
-            <div class="w-32 h-32 mx-auto mb-4 bg-center bg-cover rounded-full" 
-                style="background-image: url('assets/images/conference/spikers/Тиссон.jpg')"></div>
-            <h3 class="mb-2 text-xl font-semibold">Франц Гергардович Тиссен</h3>
-            <p class="lg:w-[300px]">Председатель Союза церквей евангельских христиан-баптистов Казахстана, родом из Караганды. С 1980 года служит пресвитером и более 40 лет занимается духовным наставничеством, обучением и поддержкой христианских общин в Казахстане и за его пределами</p>
+            <div class="flex flex-col items-center text-center transition-opacity duration-700 opacity-0 speaker">
+                <div class="w-32 h-32 mx-auto mb-4 bg-center bg-cover rounded-full" 
+                    style="background-image: url('assets/images/conference/spikers/Тиссон.jpg')"></div>
+                <h3 class="mb-2 text-xl font-semibold">Франц Гергардович Тиссен</h3>
+                <p class="lg:w-[300px] italic">"Экс-председатель Союза церквей евангельских христиан-баптистов Казахстана, родом из Караганды. С 1980 года служил пресвитером. Более 40 лет занимается духовным наставничеством, обучением и поддержкой христианских общин в Казахстане и за его пределами"</p>
+            </div>
+
+            <div class="hidden text-center transition-opacity duration-700 opacity-0 speaker">
+                <div class="w-32 h-32 mx-auto mb-4 bg-center bg-cover rounded-full" 
+                    style="background-image: url('https://via.placeholder.com/150')"></div>
+                <h3 class="mb-2 text-xl font-semibold">Sarah Miller</h3>
+                <p>Youth leader and author focused on building strong faith foundations.</p>
+            </div>
+
+            <div class="hidden text-center transition-opacity duration-700 opacity-0 speaker">
+                <div class="w-32 h-32 mx-auto mb-4 bg-center bg-cover rounded-full" 
+                    style="background-image: url('https://via.placeholder.com/150')"></div>
+                <h3 class="mb-2 text-xl font-semibold">Michael Johnson</h3>
+                <p>Worship leader and musician bringing hearts together through praise.</p>
+            </div>
+
+            </div>
         </div>
-
-        <div class="hidden text-center transition-opacity duration-700 opacity-0 speaker">
-            <div class="w-32 h-32 mx-auto mb-4 bg-center bg-cover rounded-full" 
-                style="background-image: url('https://via.placeholder.com/150')"></div>
-            <h3 class="mb-2 text-xl font-semibold">Sarah Miller</h3>
-            <p>Youth leader and author focused on building strong faith foundations.</p>
-        </div>
-
-        <div class="hidden text-center transition-opacity duration-700 opacity-0 speaker">
-            <div class="w-32 h-32 mx-auto mb-4 bg-center bg-cover rounded-full" 
-                style="background-image: url('https://via.placeholder.com/150')"></div>
-            <h3 class="mb-2 text-xl font-semibold">Michael Johnson</h3>
-            <p>Worship leader and musician bringing hearts together through praise.</p>
-        </div>
-
-        </div>
-    </div>
     </section>
 
      {{-- Schedule Section  --}}
@@ -497,6 +497,37 @@
                     </div>
                 </div>
             </template>
+        </div>
+    </section>
+
+    <section class="px-4 py-16 text-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="mb-12 text-4xl font-bold text-center">
+                Стоимость конференции
+            </h2>
+
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-1">
+
+            <div class="flex flex-col items-center text-center transition-opacity duration-700 opacity-0 speaker">
+                <h3 class="mb-2 text-xl font-semibold">Франц Гергардович Тиссен</h3>
+                <p class="lg:w-[300px] italic">"Экс-председатель Союза церквей евангельских христиан-баптистов Казахстана, родом из Караганды. С 1980 года служил пресвитером. Более 40 лет занимается духовным наставничеством, обучением и поддержкой христианских общин в Казахстане и за его пределами"</p>
+            </div>
+
+            <div class="hidden text-center transition-opacity duration-700 opacity-0 speaker">
+                <div class="w-32 h-32 mx-auto mb-4 bg-center bg-cover rounded-full" 
+                    style="background-image: url('https://via.placeholder.com/150')"></div>
+                <h3 class="mb-2 text-xl font-semibold">Sarah Miller</h3>
+                <p>Youth leader and author focused on building strong faith foundations.</p>
+            </div>
+
+            <div class="hidden text-center transition-opacity duration-700 opacity-0 speaker">
+                <div class="w-32 h-32 mx-auto mb-4 bg-center bg-cover rounded-full" 
+                    style="background-image: url('https://via.placeholder.com/150')"></div>
+                <h3 class="mb-2 text-xl font-semibold">Michael Johnson</h3>
+                <p>Worship leader and musician bringing hearts together through praise.</p>
+            </div>
+
+            </div>
         </div>
     </section>
 
