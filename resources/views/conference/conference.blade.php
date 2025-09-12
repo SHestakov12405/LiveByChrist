@@ -503,29 +503,30 @@
     <section class="px-4 py-16 text-gray-50">
         <div class="max-w-6xl mx-auto">
             <h2 class="mb-12 text-4xl font-bold text-center">
-                Стоимость конференции
+                Пожертвование на конференцию
             </h2>
 
-            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-1">
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-4 lg:grid-cols-4">
 
-            <div class="flex flex-col items-center text-center transition-opacity duration-700 opacity-0 speaker">
-                <h3 class="mb-2 text-xl font-semibold">Франц Гергардович Тиссен</h3>
-                <p class="lg:w-[300px] italic">"Экс-председатель Союза церквей евангельских христиан-баптистов Казахстана, родом из Караганды. С 1980 года служил пресвитером. Более 40 лет занимается духовным наставничеством, обучением и поддержкой христианских общин в Казахстане и за его пределами"</p>
-            </div>
+                <div class="flex flex-col items-center text-center transition-opacity duration-700 opacity-0 speaker">
+                    <h3 class="mb-2 text-2xl font-semibold">2000 рублей</h3>
+                    <p class="lg:w-[300px] italic">Регистрация, проживание, питание. Если вы зарегестрировались до 20 октября.</p>
+                </div>
 
-            <div class="hidden text-center transition-opacity duration-700 opacity-0 speaker">
-                <div class="w-32 h-32 mx-auto mb-4 bg-center bg-cover rounded-full" 
-                    style="background-image: url('https://via.placeholder.com/150')"></div>
-                <h3 class="mb-2 text-xl font-semibold">Sarah Miller</h3>
-                <p>Youth leader and author focused on building strong faith foundations.</p>
-            </div>
+                <div class="text-center transition-opacity duration-700 opacity-0 speaker">
+                    <h3 class="mb-2 text-2xl font-semibold">3000 рублей</h3>
+                    <p>В том случае, если вы не зарегестрировались</p>
+                </div>
 
-            <div class="hidden text-center transition-opacity duration-700 opacity-0 speaker">
-                <div class="w-32 h-32 mx-auto mb-4 bg-center bg-cover rounded-full" 
-                    style="background-image: url('https://via.placeholder.com/150')"></div>
-                <h3 class="mb-2 text-xl font-semibold">Michael Johnson</h3>
-                <p>Worship leader and musician bringing hearts together through praise.</p>
-            </div>
+                <div class="text-center transition-opacity duration-700 opacity-0 speaker">
+                    <h3 class="mb-2 text-2xl font-semibold">2500 рублей</h3>
+                    <p>В случае, если вы зарегестрировались после 20 октября. Сюда также входит регистрация, проживание и питание.</p>
+                </div>
+
+                <div class="text-center transition-opacity duration-700 opacity-0 speaker">
+                    <h3 class="mb-2 text-2xl font-semibold">1000 рублей</h3>
+                    <p>При присутсвии на одном дне конференции</p>
+                </div>
 
             </div>
         </div>
@@ -985,11 +986,42 @@
     </section>
 
      {{-- Footer  --}}
-    {{-- <footer class="px-4 py-8 text-white bg-gray-900">
-        <div class="max-w-4xl mx-auto text-center">
-            <p class="text-gray-400">&copy; 2024 Faith Conference. All rights reserved.</p>
+    <footer class="px-4 py-8 text-white bg-gray-900">
+        <div class="flex items-center justify-center max-w-4xl gap-6 mx-auto text-center">
+            
+            <!-- Telegram -->
+            <a href="https://t.me/livebyChrist" target="_blank" class="flex items-center justify-start transition-colors hover:text-blue-400">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 32 32" fill="none">
+                    <circle cx="16" cy="16" r="14" fill="url(#paint0_linear_87_7225)"/>
+                    <path d="M22.9866 10.2088C23.1112 9.40332 22.3454 8.76755 21.6292 9.082L7.36482 15.3448C6.85123 15.5703 6.8888 16.3483 7.42147 16.5179L10.3631 17.4547C10.9246 17.6335 11.5325 17.541 12.0228 17.2023L18.655 12.6203C18.855 12.4821 19.073 12.7665 18.9021 12.9426L14.1281 17.8646C13.665 18.3421 13.7569 19.1512 14.314 19.5005L19.659 22.8523C20.2585 23.2282 21.0297 22.8506 21.1418 22.1261L22.9866 10.2088Z" fill="white"/>
+                    <defs>
+                        <linearGradient id="paint0_linear_87_7225" x1="16" y1="2" x2="16" y2="30" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#37BBFE"/>
+                            <stop offset="1" stop-color="#007DBB"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="ml-1 text-xs">Telegram</span>
+            </a>
+
+            <!-- Map -->
+            <a href="https://yandex.ru/maps/-/CLU~4K-j" target="_blank" class="flex items-center justify-start transition-colors hover:text-red-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 -mt-0.5" fill="#E32636" viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+                </svg>
+                <span class="text-xs">Место проведения</span>
+            </a>
+
+            <!-- Phone -->
+            <a href="tel:+79532791763" class="flex items-center justify-start align-baseline transition-colors hover:text-yellow-400">
+                {{-- <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.11-.27 11.72 11.72 0 0 0 3.7.59 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C9.16 21 3 14.84 3 7a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.58.59 3.7a1 1 0 0 1-.27 1.11l-2.2 2.2z"/>
+                </svg> --}}
+                <span class="text-xs">+7-953-279-17-63</span>
+            </a>
+
         </div>
-    </footer> --}}
+        </footer>
     
     <script>
         // Schedule functionality
