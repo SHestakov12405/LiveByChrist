@@ -514,11 +514,11 @@
                 </div>
                 <div class="flex flex-col items-center text-center transition-opacity duration-700 opacity-0 speaker">
                     <h3 class="mb-2 text-2xl font-semibold">2000 рублей</h3>
-                    <p class="lg:w-[300px] italic">Регистрация, проживание, питание. Если вы зарегестрировались до 20 октября.</p>
+                    <p class="lg:w-[300px]">Регистрация, проживание, питание. Если вы зарегистрировались до 20 октября.</p>
                 </div>
                 <div class="text-center transition-opacity duration-700 opacity-0 speaker">
                     <h3 class="mb-2 text-2xl font-semibold">2500 рублей</h3>
-                    <p>В случае, если вы зарегестрировались после 20 октября. Сюда также входит регистрация, проживание и питание.</p>
+                    <p>В случае, если вы зарегистрировались после 20 октября. Сюда также входит регистрация, проживание и питание.</p>
                 </div>
                 <div class="text-center transition-opacity duration-700 opacity-0 speaker">
                     <h3 class="mb-2 text-2xl font-semibold">3000 рублей</h3>
