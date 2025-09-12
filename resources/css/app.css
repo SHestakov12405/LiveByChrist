@@ -1,0 +1,16 @@
+@import "flowbite/src/themes/default";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Daneehand';
+    src: url('/public/fonts/DaneehandRegularCyr.woff2') format('woff2'),
+         url('/public/fonts/DaneehandRegularCyr.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
