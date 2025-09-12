@@ -106,7 +106,7 @@
         /* Left edge triangles */
         .triangle-5 { 
             top: 25%; 
-            left: 2%; 
+            left: 3%; 
             width: 0; 
             height: 0; 
             border-left: 40px solid transparent; 
@@ -118,7 +118,7 @@
 
         .triangle-6 { 
             top: 45%; 
-            left: 1%; 
+            left: 2%; 
             width: 0; 
             height: 0; 
             border-left: 55px solid transparent; 
@@ -143,7 +143,7 @@
         /* Right edge triangles */
         .triangle-8 { 
             top: 30%; 
-            right: 2%; 
+            right: 3%; 
             width: 0; 
             height: 0; 
             border-left: 48px solid transparent; 
@@ -229,7 +229,7 @@
         /* Additional corner triangles for more coverage */
         .triangle-15 { 
             top: 15%; 
-            left: 1%; 
+            left: 3%; 
             width: 0; 
             height: 0; 
             border-left: 32px solid transparent; 
@@ -241,7 +241,7 @@
 
         .triangle-16 { 
             bottom: 15%; 
-            right: 1%; 
+            right: 3%; 
             width: 0; 
             height: 0; 
             border-left: 41px solid transparent; 
@@ -314,7 +314,7 @@
             <div class="hero-triangle transition-opacity duration-[1s] opacity-0 triangle-5"></div>
             <div class="hero-triangle transition-opacity duration-[1s] opacity-0 triangle-6 hidden sm:block"></div>
             <div class="hero-triangle transition-opacity duration-[1s] opacity-0 triangle-7"></div>
-            <div class="hero-triangle transition-opacity duration-[1s] opacity-0 triangle-8"></div>
+            <div class="hero-triangle transition-opacity duration-[1s] opacity-0 triangle-8 hidden sm:block"></div>
             <div class="hero-triangle transition-opacity duration-[1s] opacity-0 triangle-9 hidden sm:block"></div>
             <div class="hero-triangle transition-opacity duration-[1s] opacity-0 triangle-10"></div>
             <div class="hero-triangle transition-opacity duration-[1s] opacity-0 triangle-11"></div>
@@ -508,24 +508,21 @@
 
             <div class="grid grid-cols-1 gap-8 md:grid-cols-4 lg:grid-cols-4">
 
+                <div class="text-center transition-opacity duration-700 opacity-0 speaker">
+                    <h3 class="mb-2 text-2xl font-semibold">1000 рублей</h3>
+                    <p>При присутсвии на одном дне конференции</p>
+                </div>
                 <div class="flex flex-col items-center text-center transition-opacity duration-700 opacity-0 speaker">
                     <h3 class="mb-2 text-2xl font-semibold">2000 рублей</h3>
                     <p class="lg:w-[300px] italic">Регистрация, проживание, питание. Если вы зарегестрировались до 20 октября.</p>
                 </div>
-
-                <div class="text-center transition-opacity duration-700 opacity-0 speaker">
-                    <h3 class="mb-2 text-2xl font-semibold">3000 рублей</h3>
-                    <p>В том случае, если вы не зарегестрировались</p>
-                </div>
-
                 <div class="text-center transition-opacity duration-700 opacity-0 speaker">
                     <h3 class="mb-2 text-2xl font-semibold">2500 рублей</h3>
                     <p>В случае, если вы зарегестрировались после 20 октября. Сюда также входит регистрация, проживание и питание.</p>
                 </div>
-
                 <div class="text-center transition-opacity duration-700 opacity-0 speaker">
-                    <h3 class="mb-2 text-2xl font-semibold">1000 рублей</h3>
-                    <p>При присутсвии на одном дне конференции</p>
+                    <h3 class="mb-2 text-2xl font-semibold">3000 рублей</h3>
+                    <p>В том случае, если вы не зарегистрировались</p>
                 </div>
 
             </div>
@@ -1017,7 +1014,7 @@
                 {{-- <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.11-.27 11.72 11.72 0 0 0 3.7.59 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C9.16 21 3 14.84 3 7a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.58.59 3.7a1 1 0 0 1-.27 1.11l-2.2 2.2z"/>
                 </svg> --}}
-                <span class="text-xs">+7-953-279-17-63</span>
+                <span class="text-xs">+79532791763</span>
             </a>
 
         </div>
@@ -1269,7 +1266,7 @@
                             { title: "Утреннее общение", subtitle: "За чашечкой кофе", time: "9:00" },
                             { title: "Сессия 2", subtitle: 'Проповедь "Бойся Бога"', time: "10:00" },
                             { title: "Общение", subtitle: "Кофе-брейк", time: "11:30" },
-                            { title: "Семминары", subtitle: "По определенным темам", time: "12:00" },
+                            { title: "Семинары", subtitle: "По определенным темам", time: "12:00" },
                             { title: "Обед", subtitle: "", time: "13:00" },
                             { title: "Круглый стол", subtitle: "Ответы на ваши вопросы", time: "14:30" },
                             { title: "Общение", subtitle: "Кофе-брейк", time: "16:00" },
