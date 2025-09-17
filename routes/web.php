@@ -35,8 +35,8 @@ Route::prefix('/lager')->group(function () {
 
 Route::get('/', [ConferenceController::class, 'index'])->middleware(CheckPageAccessKey::class);
 Route::post('/conference/registration', [ConferenceController::class, "registration"]);
-Route::get('/export/sleep-required', [ExportController::class, 'exportSleepRequired'])->middleware(CheckPageAccessKey::class);
-Route::get('/export/sleep-help', [ExportController::class, 'exportSleepHelp'])->middleware(CheckExportAccessKey::class);
+Route::get('/export/sleep/required', [ExportController::class, 'exportSleepRequired'])->middleware(CheckPageAccessKey::class);
+Route::get('/export/sleep/help', [ExportController::class, 'exportSleepHelp'])->middleware(CheckExportAccessKey::class);
 Route::get('/export/all', [ExportController::class, 'exportAll'])->middleware(CheckExportAccessKey::class);
 Route::get('/conference/success', [ConferenceController::class, "success"]);
 Route::get('/conference/fail', [ConferenceController::class, "fail"]);
