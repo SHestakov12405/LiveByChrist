@@ -25,6 +25,7 @@ class SleepRequiredExport implements FromCollection, WithHeadings, WithStyles, W
                 'Фамилия' => $item->surname,
                 'Имя' => $item->name,
                 'Email' => $item->email,
+                'Телефон' => $item->phone, // 👈 добавили телефон
                 'Пол' => $item->gender === 'brother' ? 'Брат' : 'Сестра',
                 'Возраст' => $item->age,
                 'Регион' => $item->region,
@@ -41,7 +42,7 @@ class SleepRequiredExport implements FromCollection, WithHeadings, WithStyles, W
     public function headings(): array
     {
         return [
-            '№','Фамилия','Имя','Email','Пол','Возраст','Регион','Город','Церковь','Деноминация','Семейное положение','Нужен ночлег','Пожелания',
+            '№','Фамилия','Имя','Email','Телефон','Пол','Возраст','Регион','Город','Церковь','Деноминация','Семейное положение','Нужен ночлег','Пожелания',
         ];
     }
 
@@ -63,15 +64,16 @@ class SleepRequiredExport implements FromCollection, WithHeadings, WithStyles, W
             'B' => 20,
             'C' => 15,
             'D' => 25,
-            'E' => 10,
+            'E' => 20, // 👈 ширина для телефона
             'F' => 10,
-            'G' => 20,
-            'H' => 15,
-            'I' => 20,
+            'G' => 10,
+            'H' => 20,
+            'I' => 15,
             'J' => 20,
             'K' => 20,
-            'L' => 15,
-            'M' => 40,
+            'L' => 20,
+            'M' => 15,
+            'N' => 40,
         ];
     }
 
@@ -92,6 +94,8 @@ class SleepRequiredExport implements FromCollection, WithHeadings, WithStyles, W
                           ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
                           ->getStartColor()->setRGB('FFFFFF');
                 }
+
+                // выравнивание по центру для первой колонки
                 $sheet->getStyle("A2:A{$highestRow}")->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
             },
         ];
