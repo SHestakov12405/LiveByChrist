@@ -8,10 +8,22 @@ use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithStyles;
 use Maatwebsite\Excel\Concerns\WithColumnWidths;
 use Maatwebsite\Excel\Concerns\WithEvents;
+use Maatwebsite\Excel\Concerns\WithMultipleSheets;
 use Maatwebsite\Excel\Events\AfterSheet;
 use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 
-class AllRegistrationsExport implements FromCollection, WithHeadings, WithStyles, WithColumnWidths, WithEvents
+class AllRegistrationsExport implements WithMultipleSheets
+{
+    public function sheets(): array
+    {
+        return [
+            new AllParticipantsSheet(),
+            new ExcludeBryanskParticipantsSheet(),
+        ];
+    }
+}
+
+class AllParticipantsSheet implements FromCollection, WithHeadings, WithStyles, WithColumnWidths, WithEvents
 {
     public function collection()
     {
@@ -23,7 +35,7 @@ class AllRegistrationsExport implements FromCollection, WithHeadings, WithStyles
                 'Фамилия' => $item->surname,
                 'Имя' => $item->name,
                 'Email' => $item->email,
-                'Телефон' => $item->phone, // 👈 добавили
+                'Телефон' => $item->phone,
                 'Пол' => $item->gender === 'brother' ? 'Брат' : 'Сестра',
                 'Возраст' => $item->age,
                 'Регион' => $item->region,
@@ -63,7 +75,7 @@ class AllRegistrationsExport implements FromCollection, WithHeadings, WithStyles
             'B' => 20,
             'C' => 15,
             'D' => 25,
-            'E' => 20, // 👈 телефон
+            'E' => 20,
             'F' => 10,
             'G' => 10,
             'H' => 20,
@@ -99,5 +111,33 @@ class AllRegistrationsExport implements FromCollection, WithHeadings, WithStyles
                       ->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
             },
         ];
+    }
+}
+
+class ExcludeBryanskParticipantsSheet extends AllParticipantsSheet
+{
+    public function collection()
+    {
+        $registrations = ConferenceRegistration::where('region', '!=', 'bryansk')->orderBy('surname')->get();
+
+        return $registrations->map(function($item, $key) {
+            return [
+                '№' => $key + 1,
+                'Фамилия' => $item->surname,
+                'Имя' => $item->name,
+                'Email' => $item->email,
+                'Телефон' => $item->phone,
+                'Пол' => $item->gender === 'brother' ? 'Брат' : 'Сестра',
+                'Возраст' => $item->age,
+                'Регион' => $item->region,
+                'Город' => $item->city,
+                'Церковь' => $item->church,
+                'Деноминация' => $item->denomination,
+                'Семейное положение' => $item->maritalstatus === 'married' ? 'Женат/Замужем' : 'Не женат/Не замужем',
+                'Нужен ночлег' => $item->sleep === 'required' ? 'Да' : '',
+                'Может предоставить ночлег' => $item->sleep === 'help' ? 'Да' : '',
+                'Пожелания' => $item->wishes,
+            ];
+        });
     }
 }
