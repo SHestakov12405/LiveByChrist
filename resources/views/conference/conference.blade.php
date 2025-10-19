@@ -632,7 +632,7 @@
                             <p class="mt-2 text-gray-600">Пожалуйста укажите ваш пол</p>
                         </div>
                         <div class="space-y-4">
-                            <div class="grid grid-cols-2 gap-4">
+                            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                                 <label class="relative cursor-pointer">
                                     <input type="radio" name="gender" value="brother" required class="sr-only">
                                     <div class="p-4 text-center transition-all duration-200 border-2 border-gray-300 rounded-lg gender-option hover:border-confprimary">
@@ -660,7 +660,7 @@
                             <p class="mt-2 text-gray-600">Пожалуйста укажите ваш возраст</p>
                         </div>
                         <div class="space-y-4">
-                            <div class="grid grid-cols-2 gap-4">
+                            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                                 <label class="relative cursor-pointer">
                                     <input type="radio" name="age" value="15-17" required class="sr-only">
                                     <div class="p-4 text-center transition-all duration-200 border-2 border-gray-300 rounded-lg age-option hover:border-confprimary">
@@ -699,8 +699,6 @@
                             </div>
                         </div>
                     </div>
-
-                    
 
                      {{-- Step 2: Church/City  --}}
                     <div id="step-7" class="hidden form-step">
@@ -900,7 +898,7 @@
                         </div>
                     </div>
 
-                    <div id="step-12" class="hidden form-step">
+                    <div id="step-12" class="relative hidden pb-32 form-step sm:pb-20">
                         <div class="mb-6 text-center">
                             <div class="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-confprimary">
                                 <span class="text-3xl text-white material-icons">bed</span>
@@ -911,10 +909,10 @@
                         <div class="space-y-4">
                             <div class="grid grid-cols-1 gap-4">
                                 <label class="relative cursor-pointer">
-                                    <input type="radio" name="sleep" value="required" required class="sr-only">
-                                    <div class="p-4 text-center transition-all duration-200 border-2 border-gray-300 rounded-lg sleep-option hover:border-confprimary">
+                                    <input type="radio" name="sleep" value="required" disabled class="sr-only">
+                                    <div class="p-4 text-center transition-all duration-200 bg-gray-300 border-2 border-gray-300 rounded-lg sleep-option">
                                         {{-- <div class="mb-2 text-2xl">👨</div> --}}
-                                        <span class="font-medium text-gray-900">Мне нужен ночлег</span>
+                                        <span class="font-medium text-gray-600">Мне нужен ночлег*</span>
                                     </div>
                                 </label>
                                 <label class="relative cursor-pointer">
@@ -925,13 +923,16 @@
                                     </div>
                                 </label>
                                 <label class="relative cursor-pointer">
-                                    <input type="radio" name="sleep" value="help" required class="sr-only">
-                                    <div class="p-4 text-center transition-all duration-200 border-2 border-gray-300 rounded-lg sleep-option hover:border-confprimary">
+                                    <input type="radio" name="sleep" value="help" disabled class="sr-only">
+                                    <div class="p-4 text-center transition-all duration-200 bg-gray-300 border-2 border-gray-300 rounded-lg sleep-option">
                                         {{-- <div class="mb-2 text-2xl">👩</div> --}}
-                                        <span class="font-medium text-gray-900">Я ночую дома, и у меня есть возможность предоставить ночлег</span>
+                                        <span class="font-medium text-gray-600">Я ночую дома, и у меня есть возможность предоставить ночлег</span>
                                     </div>
                                 </label>
                             </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-4 text-sm text-red-500">
+                            <p>*ВНИМАНИЕ: В связи с ограниченным количеством мест, на данный момент мы не можем предоставить ночлег участникам конференции.</p>
                         </div>
                     </div>
 
