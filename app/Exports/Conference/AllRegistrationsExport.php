@@ -19,7 +19,8 @@ class AllRegistrationsExport implements WithMultipleSheets
         return [
             new AllParticipantsSheet(),
             new ExcludeBryanskParticipantsSheet(),
-            new BryanskParticipantsSheet()
+            new BryanskParticipantsSheet(),
+            new SleepRequiredParticipantsSheet(),
         ];
     }
 }
@@ -126,7 +127,7 @@ class ExcludeBryanskParticipantsSheet extends AllParticipantsSheet
 {
     public function collection()
     {
-        $registrations = ConferenceRegistration::where('region', '!=', 'bryansk')->orderBy('surname')->get();
+        $registrations = ConferenceRegistration::where('region', '!=', 'bryansk')->where('sleep', '!=', 'required')->orderBy('surname')->get();
 
         return $registrations->map(function($item, $key) {
             $registrationDate = $item->created_at;
@@ -160,6 +161,39 @@ class BryanskParticipantsSheet extends AllParticipantsSheet
     public function collection()
     {
         $registrations = ConferenceRegistration::where('region', '=', 'bryansk')->orderBy('surname')->get();
+
+        return $registrations->map(function($item, $key) {
+            $registrationDate = $item->created_at;
+            $amount = $registrationDate < '2025-10-21' ? 2000 : 2500;
+
+            return [
+                '№' => $key + 1,
+                'Фамилия' => $item->surname,
+                'Имя' => $item->name,
+                'Email' => $item->email,
+                'Телефон' => $item->phone,
+                'Пол' => $item->gender === 'brother' ? 'Брат' : 'Сестра',
+                'Возраст' => $item->age,
+                'Регион' => $item->region,
+                'Город' => $item->city,
+                'Церковь' => $item->church,
+                'Деноминация' => $item->denomination,
+                'Семейное положение' => $item->maritalstatus === 'married' ? 'Женат/Замужем' : 'Не женат/Не замужем',
+                'Нужен ночлег' => $item->sleep === 'required' ? 'Да' : '',
+                'Может предоставить ночлег' => $item->sleep === 'help' ? 'Да' : '',
+                'Пожелания' => $item->wishes,
+                'Дата регистрации' => $registrationDate->format('Y-m-d'),
+                'Сумма' => $amount,
+            ];
+        });
+    }
+}
+
+class SleepRequiredParticipantsSheet extends AllParticipantsSheet
+{
+    public function collection()
+    {
+        $registrations = ConferenceRegistration::where('region', '!=', 'bryansk')->where('sleep', '=', 'required')->orderBy('surname')->get();
 
         return $registrations->map(function($item, $key) {
             $registrationDate = $item->created_at;
