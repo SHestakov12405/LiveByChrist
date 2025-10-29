@@ -19,6 +19,7 @@ class AllRegistrationsExport implements WithMultipleSheets
         return [
             new AllParticipantsSheet(),
             new ExcludeBryanskParticipantsSheet(),
+            new BryanskParticipantsSheet()
         ];
     }
 }
@@ -30,6 +31,9 @@ class AllParticipantsSheet implements FromCollection, WithHeadings, WithStyles, 
         $registrations = ConferenceRegistration::orderBy('surname')->get();
 
         return $registrations->map(function($item, $key) {
+            $registrationDate = $item->created_at;
+            $amount = $registrationDate <= '2025-10-20' ? 2000 : 2500;
+
             return [
                 '№' => $key + 1,
                 'Фамилия' => $item->surname,
@@ -46,6 +50,8 @@ class AllParticipantsSheet implements FromCollection, WithHeadings, WithStyles, 
                 'Нужен ночлег' => $item->sleep === 'required' ? 'Да' : '',
                 'Может предоставить ночлег' => $item->sleep === 'help' ? 'Да' : '',
                 'Пожелания' => $item->wishes,
+                'Дата регистрации' => $registrationDate->format('Y-m-d'),
+                'Сумма' => $amount,
             ];
         });
     }
@@ -53,7 +59,7 @@ class AllParticipantsSheet implements FromCollection, WithHeadings, WithStyles, 
     public function headings(): array
     {
         return [
-            '№','Фамилия','Имя','Email','Телефон','Пол','Возраст','Регион','Город','Церковь','Деноминация','Семейное положение','Нужен ночлег','Может предоставить ночлег','Пожелания',
+            '№','Фамилия','Имя','Email','Телефон','Пол','Возраст','Регион','Город','Церковь','Деноминация','Семейное положение','Нужен ночлег','Может предоставить ночлег','Пожелания','Дата регистрации','Сумма',
         ];
     }
 
@@ -86,6 +92,8 @@ class AllParticipantsSheet implements FromCollection, WithHeadings, WithStyles, 
             'M' => 15,
             'N' => 15,
             'O' => 40,
+            'P' => 15,
+            'Q' => 10,
         ];
     }
 
@@ -121,6 +129,9 @@ class ExcludeBryanskParticipantsSheet extends AllParticipantsSheet
         $registrations = ConferenceRegistration::where('region', '!=', 'bryansk')->orderBy('surname')->get();
 
         return $registrations->map(function($item, $key) {
+            $registrationDate = $item->created_at;
+            $amount = $registrationDate <= '2025-10-20' ? 2000 : 2500;
+
             return [
                 '№' => $key + 1,
                 'Фамилия' => $item->surname,
@@ -137,6 +148,41 @@ class ExcludeBryanskParticipantsSheet extends AllParticipantsSheet
                 'Нужен ночлег' => $item->sleep === 'required' ? 'Да' : '',
                 'Может предоставить ночлег' => $item->sleep === 'help' ? 'Да' : '',
                 'Пожелания' => $item->wishes,
+                'Дата регистрации' => $registrationDate->format('Y-m-d'),
+                'Сумма' => $amount,
+            ];
+        });
+    }
+}
+
+class BryanskParticipantsSheet extends AllParticipantsSheet
+{
+    public function collection()
+    {
+        $registrations = ConferenceRegistration::where('region', '=', 'bryansk')->orderBy('surname')->get();
+
+        return $registrations->map(function($item, $key) {
+            $registrationDate = $item->created_at;
+            $amount = $registrationDate <= '2025-10-20' ? 2000 : 2500;
+
+            return [
+                '№' => $key + 1,
+                'Фамилия' => $item->surname,
+                'Имя' => $item->name,
+                'Email' => $item->email,
+                'Телефон' => $item->phone,
+                'Пол' => $item->gender === 'brother' ? 'Брат' : 'Сестра',
+                'Возраст' => $item->age,
+                'Регион' => $item->region,
+                'Город' => $item->city,
+                'Церковь' => $item->church,
+                'Деноминация' => $item->denomination,
+                'Семейное положение' => $item->maritalstatus === 'married' ? 'Женат/Замужем' : 'Не женат/Не замужем',
+                'Нужен ночлег' => $item->sleep === 'required' ? 'Да' : '',
+                'Может предоставить ночлег' => $item->sleep === 'help' ? 'Да' : '',
+                'Пожелания' => $item->wishes,
+                'Дата регистрации' => $registrationDate->format('Y-m-d'),
+                'Сумма' => $amount,
             ];
         });
     }
