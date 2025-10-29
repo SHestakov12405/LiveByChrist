@@ -160,7 +160,7 @@ class BryanskParticipantsSheet extends AllParticipantsSheet
 {
     public function collection()
     {
-        $registrations = ConferenceRegistration::where('region', '=', 'bryansk')->orderBy('surname')->get();
+        $registrations = ConferenceRegistration::where('region', '=', 'bryansk')->where('sleep', '!=', 'required')->orderBy('surname')->get();
 
         return $registrations->map(function($item, $key) {
             $registrationDate = $item->created_at;
@@ -193,7 +193,7 @@ class SleepRequiredParticipantsSheet extends AllParticipantsSheet
 {
     public function collection()
     {
-        $registrations = ConferenceRegistration::where('region', '!=', 'bryansk')->where('sleep', '=', 'required')->orderBy('surname')->get();
+        $registrations = ConferenceRegistration::where('sleep', '=', 'required')->orderBy('surname')->get();
 
         return $registrations->map(function($item, $key) {
             $registrationDate = $item->created_at;
