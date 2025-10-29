@@ -32,7 +32,7 @@ class AllParticipantsSheet implements FromCollection, WithHeadings, WithStyles, 
 
         return $registrations->map(function($item, $key) {
             $registrationDate = $item->created_at;
-            $amount = $registrationDate <= '2025-10-20' ? 2000 : 2500;
+            $amount = $registrationDate < '2025-10-21' ? 2000 : 2500;
 
             return [
                 '№' => $key + 1,
@@ -130,7 +130,7 @@ class ExcludeBryanskParticipantsSheet extends AllParticipantsSheet
 
         return $registrations->map(function($item, $key) {
             $registrationDate = $item->created_at;
-            $amount = $registrationDate <= '2025-10-20' ? 2000 : 2500;
+            $amount = $registrationDate < '2025-10-21' ? 2000 : 2500;
 
             return [
                 '№' => $key + 1,
@@ -163,7 +163,7 @@ class BryanskParticipantsSheet extends AllParticipantsSheet
 
         return $registrations->map(function($item, $key) {
             $registrationDate = $item->created_at;
-            $amount = $registrationDate <= '2025-10-20' ? 2000 : 2500;
+            $amount = $registrationDate < '2025-10-21' ? 2000 : 2500;
 
             return [
                 '№' => $key + 1,
